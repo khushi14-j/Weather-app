@@ -1,103 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
-* {
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Poppins:wght@200&display=swap');
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-family: 'montserrat', sans-serif;
-    background-image: url('https://images.unsplash.com/photo-1621274403997-37aace184f49?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1');
-    background-repeat: no-repeat;
-    background-size:cover;
-    overflow:hidden;
     font-family: 'Poppins', sans-serif;
+
 }
 
-.app-wrap {
+.container{
+    background: #171717;
+    color: #fff;
+    padding: 2rem;
+    width: 40%;
+    margin: 4rem auto;
+    border-radius: 10px;
+}
+
+.weather_header{
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    justify-content: space-between;
+    align-items: center;
 }
 
-header {
+input{
+    border: none;
+    background: #1e1e1e;
+    outline: none;
+    color: #fff;
+    padding: 0.5rem 2.5rem;
+    border-radius: 5px;
+}
+
+input::placeholder{
+    color: #fff
+}
+
+.weather_search{
+    position: relative;
+}
+
+.weather_search i{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.weather_units{
+    font-size: 1.5rem;
+}
+
+.weather_units span{
+    cursor: pointer;
+}
+
+.weather_units span.first-child{
+    margin-right: 0.5rem;
+}
+
+.weather_body{
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.weather_datetime{
+    margin-bottom: 2rem;
+    font-size: 14px;
+}
+
+.weather_forecast{
+    background: #1e1e1e;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+}
+
+.weather_icon img{
+    width: 100px;
+}
+
+.weather_temperature{
+    font-size: 1.75rem;
+}
+
+.weather_minmax{
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 50px 15px 15px;
 }
 
-header input {
-    width: 100%;
-    max-width: 280px;
-    padding: 10px 15px;
-    border: none;
-    outline: none;
-    background-color: rgba(255,255,255,0.3);
-    border-radius: 16px 0px 16px 0px;
-    border-bottom: 3px solid #DF8E00;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 300;
-    transition: 0.2s ease-out;
+.weather_minmax p{
+    font-size: 14px;
+    margin: 0.5rem;
 }
 
-header input:focus {
-    background-color: rgba(255,255,255,0.6);
+.weather_info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
 }
 
-main {
-    flex: 1 1 100%;
-    padding: 25px 25px 50px;
+.weather_card{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-}
-.location{
-    font-weight: 100;
-}
-.location .city{
-    color: #FFF;
-    font-size: 70px;
-    margin-bottom: 5px;
-}
-.location .date{
-    color: #FFF;
-    font-size: 20px;
-}
-.location .time{
-    color: #FFF;
-    font-size: 20px;
-}
-.location #am-pm{
-    font-size: 20px;
-    margin-left: 10px;
-}
-.current .temp {
-    color: #FFF;
-    font-size: 70px;
-    font-weight: 100;
-    margin: 30px 0px;
+    background: #1e1e1e;
+    padding: 1rem;
+    border-radius: 10px;
 }
 
-.current .temp span {
-    font-weight: 100;
+.weather_card i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
 }
 
-.current .weather {
-    color: #FFF;
-    font-size: 16px;
-    font-weight: 100;
-    font-style: italic;
-    margin-bottom: 15px;
-    text-shadow: 0px 3px rgba(0,0,0,0.4);
+.weather_card p {
+    font-size: 14px;
 }
 
-.current .hi-low {
-    color: #FFF;
-    font-size: 24px;
-    font-weight: 100;
-    text-shadow: 0px 4px rgba(0, 0, 0, 0.4);
-  }
+@media(max-width: 936px){
+    .container{
+        width: 90%;
+    }
+
+    .weather_header{
+        flex-direction: column;
+    }
+
+    .weather_units{
+        margin-top: 1rem;
+    }
+}
+
+@media(max-width: 400px){
+    .weather_info{
+        grid-template-columns: none;
+    }
+}
